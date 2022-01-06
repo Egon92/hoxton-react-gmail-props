@@ -16,6 +16,8 @@ function App() {
   const [hideRead, setHideRead] = useState(false);
   const [currentTab, setCurrentTab] = useState("inbox");
 
+  const [input, setInput] = useState("");
+
   const unreadEmails = emails.filter((email) => !email.read);
   const starredEmails = emails.filter((email) => email.starred);
 
@@ -43,6 +45,11 @@ function App() {
 
   if (currentTab === "starred")
     filteredEmails = getStarredEmails(filteredEmails);
+
+  const searchedEmails = filteredEmails.filter((email) =>
+    email.title.includes(input)
+  );
+  console.log(searchedEmails);
 
   return (
     <div className="app">

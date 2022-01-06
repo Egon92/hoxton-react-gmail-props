@@ -13,7 +13,13 @@ function Header() {
       </div>
 
       <div className="search">
-        <input className="search-bar" placeholder="Search mail" />
+        <input
+          onChange={function (event) {
+            event.target.value;
+          }}
+          className="search-bar"
+          placeholder="Search mail"
+        />
       </div>
     </header>
   );
